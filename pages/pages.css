@@ -4,22 +4,6 @@
 */
 
 /* Base styles for project pages */
-.back-link {
-    margin: 2rem 0;
-}
-
-.back-link a {
-    display: inline-block;
-    padding: 0.5rem 0;
-    font-weight: 400;
-    color: var(--secondary-color);
-    transition: color 0.3s ease;
-}
-
-.back-link a:hover {
-    color: var(--primary-color);
-}
-
 /* Add spacing below the navbar */
 body {
     padding-top: 4rem; /* Adjust this value as needed */
@@ -35,19 +19,37 @@ main {
     padding: 2rem 1rem; /* Add padding to the main content */
 }
 
+.back-link {
+    margin: 2rem 0;
+    padding: 0 1.5rem;
+}
+
+.back-link a {
+    display: inline-block;
+    padding: 0.5rem 0;
+    font-weight: 400;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+    color: var(--primary-color);
+}
+
 /* Project Header */
 .project-header {
     margin-bottom: 3rem;
+    padding: 0 1.5rem;
 }
 
 .project-header h1 {
-    font-size: 24px;
+    font-size: 2rem;
     line-height: 1.3;
     margin-bottom: 1rem;
 }
 
 .project-tagline {
-    font-size: 18px;
+    font-size: 1.125rem;
     color: var(--secondary-color);
     margin-bottom: 1.5rem;
 }
@@ -57,12 +59,13 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     border-top: 1px solid var(--border-color);
 }
 
 .project-duration {
     margin-bottom: 1rem;
+    padding-right: 1rem;
 }
 
 .tech-stack-full {
@@ -72,29 +75,48 @@ main {
 
 .tech-stack-full span {
     background-color: var(--light-color);
-    padding: 0.25rem 0.5rem;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 14px;
+    padding: 0.5rem 0.75rem;
+    margin-right: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+    border-radius: 4px;
+}
+
+/* NDA Notice */
+.nda-notice {
+    background-color: #fffbeb;
+    border-left: 3px solid #f59e0b;
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    font-size: 0.9rem;
+    color: #78350f;
+    border-radius: 0 6px 6px 0;
+}
+
+.nda-notice p {
+    margin: 0;
 }
 
 /* Project Content */
 .project-content {
     max-width: 100%;
+    padding: 0 1.5rem;
 }
 
 .project-section {
-    margin-bottom: 3rem;
-    padding-bottom: 1rem;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
     border-bottom: 1px solid var(--border-color);
 }
 
 .project-section:last-child {
     border-bottom: none;
+    margin-bottom: 0;
 }
 
 .project-section h2 {
     margin-bottom: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .section-content {
@@ -111,7 +133,7 @@ main {
 }
 
 .section-content li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 /* Problem List */
@@ -119,43 +141,51 @@ main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .problem-item {
     background-color: var(--light-color);
     padding: 1.5rem;
+    border-radius: 6px;
 }
 
 .problem-item h3 {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
 }
 
 /* Solution Steps */
 .solution-steps {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .solution-step {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     border-left: 3px solid var(--primary-color);
-    padding-left: 1rem;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+}
+
+.solution-step:last-child {
+    margin-bottom: 0;
 }
 
 /* Code Blocks */
 .code-block {
     background-color: #f8f8f8;
     border: 1px solid #e0e0e0;
-    border-radius: 3px;
+    border-radius: 6px;
     overflow-x: auto;
-    margin: 1.5rem 0;
+    margin: 2rem 0;
 }
 
 .code-block pre {
-    padding: 1rem;
+    padding: 1.5rem;
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
-    line-height: 1.4;
+    font-size: 0.875rem;
+    line-height: 1.5;
 }
 
 .code-block code {
@@ -167,46 +197,51 @@ main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .metric {
     background-color: var(--light-color);
     padding: 1.5rem;
     text-align: center;
+    border-radius: 6px;
 }
 
 .metric-value {
-    font-size: 24px;
+    font-size: 1.75rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .metric-label {
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .metric-description {
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--secondary-color);
 }
 
 .impact-statement {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 300;
-    padding: 1.5rem;
+    padding: 1.75rem;
     background-color: #f9f9f9;
     border-left: 3px solid var(--primary-color);
+    border-radius: 0 6px 6px 0;
+    margin: 2rem 0;
 }
 
 /* Architecture Section */
 .architecture-diagram {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .placeholder-image.large {
     height: 400px;
+    width: 100%;
+    border-radius: 6px;
 }
 
 .architecture-explanation {
@@ -219,17 +254,19 @@ main {
 .challenge-solution {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1.5rem;
-    margin-bottom: 2rem;
+    grid-gap: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .challenge, .solution {
     background-color: var(--light-color);
-    padding: 1.5rem;
+    padding: 1.75rem;
+    border-radius: 6px;
 }
 
 .challenge h3, .solution h3 {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
 }
 
 /* Lessons */
@@ -237,15 +274,18 @@ main {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .lesson {
     background-color: var(--light-color);
-    padding: 1.5rem;
+    padding: 1.75rem;
+    border-radius: 6px;
 }
 
 .lesson h3 {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
 }
 
 /* Recommendations */
@@ -253,51 +293,105 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .recommendation {
     background-color: var(--light-color);
-    padding: 1.5rem;
+    padding: 1.75rem;
+    border-radius: 6px;
 }
 
 .recommendation h3 {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
 }
 
 /* Related Projects */
 .related-projects {
-    margin-top: 3rem;
-    padding-top: 2rem;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
     border-top: 1px solid var(--border-color);
 }
 
 .related-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1.5rem;
+    grid-gap: 2rem;
 }
 
 .related-card {
     background-color: var(--light-color);
-    padding: 1.5rem;
+    padding: 1.75rem;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.related-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .related-card h3 {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
 }
 
 .related-card p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 
 .button.secondary {
     background-color: var(--secondary-color);
+    padding: 0.75rem 1.25rem;
+    border-radius: 4px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.button.secondary:hover {
+    background-color: var(--secondary-dark-color, #444);
+}
+
+/* Container padding */
+.container {
+    padding: 0 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Media Queries */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 992px) {
+    .architecture-explanation {
+        grid-template-columns: 1fr;
+        grid-gap: 1.5rem;
+    }
+    
+    .results-metrics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .recommendations {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     #home {
         padding-top: 6rem;
+    }
+    
+    .project-header h1 {
+        font-size: 1.75rem;
     }
     
     .project-meta {
@@ -306,18 +400,106 @@ main {
     }
     
     .problem-list {
-        grid-template-columns: 1fr; /* Adjust grid for smaller screens */
+        grid-template-columns: 1fr;
     }
-
-    .results-metrics {
-        grid-template-columns: repeat(2, 1fr); /* Reduce columns for smaller screens */
+    
+    .challenge-solution {
+        grid-template-columns: 1fr;
     }
-
-    .recommendations {
-        grid-template-columns: 1fr; /* Stack recommendations vertically */
-    }
-
+    
     .related-cards {
-        grid-template-columns: 1fr; /* Stack related projects vertically */
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-stack-full span {
+        margin-bottom: 0.5rem;
+    }
+    
+    .placeholder-image.large {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-header, 
+    .project-content,
+    .back-link {
+        padding: 0 1rem;
+    }
+    
+    .project-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .project-tagline {
+        font-size: 1rem;
+    }
+    
+    .results-metrics {
+        grid-template-columns: 1fr;
+    }
+    
+    .recommendations {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-content ul, 
+    .section-content ol {
+        padding-left: 1.25rem;
+    }
+    
+    .code-block pre {
+        padding: 1rem;
+        font-size: 0.75rem;
+    }
+    
+    .solution-step {
+        padding-left: 1rem;
+    }
+    
+    .challenge, 
+    .solution, 
+    .lesson, 
+    .recommendation, 
+    .related-card,
+    .problem-item,
+    .metric {
+        padding: 1.25rem;
+    }
+    
+    .impact-statement {
+        padding: 1.25rem;
+        font-size: 1rem;
+    }
+    
+    .placeholder-image.large {
+        height: 200px;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .related-card:hover {
+        transform: none;
+    }
+    
+    .back-link a,
+    .button.secondary {
+        transition: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    .back-link {
+        display: none;
+    }
+    
+    .project-content {
+        page-break-inside: avoid;
+    }
+    
+    .project-section {
+        page-break-inside: avoid;
     }
 }
