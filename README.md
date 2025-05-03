@@ -32,9 +32,9 @@ To run this project locally:
 
 To deploy on GitHub Pages:
 
-1. Push to a repository named `username.github.io`
+1. Push to a repository named `rodgerswisdom.github.io`
 2. Enable GitHub Pages in repository settings
-3. Site will be available at `https://username.github.io`
+3. Site will be available at `https://rodgerswisdom.github.io`
 
 ## Customization
 

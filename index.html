@@ -3,58 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Backend Engineer Portfolio - Experienced AI Engineer based in Kenya">
-    <meta name="keywords" content="backend engineer portfolio, AI engineer Kenya, software developer">
-    <title>Backend & AI Engineer Portfolio</title>
+    <meta name="description" content="Backend Engineer Portfolio - Experienced backend and AI engineer showcasing projects and skills">
+    <meta name="keywords" content="backend engineer portfolio, AI engineer Kenya, node.js developer, python developer, backend development">
+    <title>Hawona | Backend & AI Engineer</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav id="main-nav">
-            <ul>
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <nav id="navbar">
+            <div class="container">
+                <div class="name-mobile">Rodgers (Hawona) Wisdom</div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section id="home">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Backend Engineer & AI Specialist based in Kenya</p>
-        </section>
+        <!-- Home Section -->
+        <section id="home" class="section">
+            <div class="container">
+                <h1>Hey, I'm Rodgers!</h1>
+                <h2><b>Mid-Level Backend & AI Engineer | 5+ Years Experience | Call for Code 2023 Winner($5000)</b></h2>
+                <p class="intro">
+                    I’m a final-year BSc Software Engineering student with a passion for building scalable backend systems and AI solutions.
+                    As a Technical Co-Founder with 5+ years of experience, I’ve worked on award-winning projects like AgroGhala ($5,000 Call for Code winner) and scaled Africa’s largest no-code AI repository at MyInsight IQ.
+                    Explore my work below!
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>MAJIAPP</h3>
-                <div class="diagram-placeholder" aria-label="Diagram: MAJIAPP Architecture"></div>
-                <p>Project description will be added here.</p>
+                </p>
+                <a href="#projects" class="button">View Projects</a>
             </div>
         </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Backend Development</h3>
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>MAJIAPP: Vendor Verification System</h3>
+                        <p>
+                            Maintained a legacy app connecting Kenyans to clean water. Added SQL triggers for vendor verification, 
+                            improving onboarding by ~30%, and implemented migrations for safe DB updates. 
+                            Hosted on Digital Ocean with Docker.
+                        </p>
+                        <div class="tech-stack">
+                            <span>PHP (CI3)</span>
+                            <span>MySQL</span>
+                            <span>Docker</span>
+                            <span>Digital Ocean</span>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <div class="placeholder-image">
+                            <p>Diagram: MAJIAPP Architecture</p>
+                            <p class="diagram-desc">User → SQL Trigger → DB → Digital Ocean</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-category">
-                    <h3>AI & Machine Learning</h3>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>MyInsight IQ: AI Tools Directory</h3>
+                        <p>
+                            Developed the backend for Africa's largest no-code AI repository (4,000+ tools) 
+                            using Python and Django, hosted on AWS EC2 with PostgreSQL for structured data.
+                        </p>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>AWS (EC2, S3)</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <div class="placeholder-image">
+                            <p>Diagram: AI Tools Directory Architecture</p>
+                            <p class="diagram-desc">User → Django API → PostgreSQL → AWS EC2/S3</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>MyInsight IQ: AI Audio Tool</h3>
+                        <p>
+                            Built an AI Advisor for audio-based user guidance, integrating NLP with Node.js and MongoDB, 
+                            hosted on AWS EC2, achieving 99.9% uptime for thousands of users.
+                        </p>
+                        <div class="tech-stack">
+                            <span>Node.js</span>
+                            <span>AWS (EC2, S3)</span>
+                            <span>MongoDB</span>
+                            <span>NLP</span>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <div class="placeholder-image">
+                            <p>Diagram: AI Audio Tool Flow</p>
+                            <p class="diagram-desc">User Query → NLP → AI Response → Audio Output</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>AgroGhala: AI-Powered Farming Solutions</h3>
+                        <p>
+                            Co-founded and led development of AgroGhala, connecting 1,000+ Kenyan farmers to storage 
+                            with IBM Watson AI chatbots, hosted on AWS EC2 with Docker. 
+                            Won 1st Runner-Up in Call for Code 2023 ($5,000).
+                        </p>
+                        <div class="tech-stack">
+                            <span>Node.js</span>
+                            <span>IBM Watson AI</span>
+                            <span>AWS (EC2)</span>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <div class="placeholder-image">
+                            <p>Diagram: AgroGhala System</p>
+                            <p class="diagram-desc">User → Chatbot → AWS EC2 → Storage DB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>BoB: Financial Literacy App</h3>
+                        <p>
+                            Developed a mobile app for Nairobians to set savings goals, 
+                            building the Flutter frontend and integrating Gemini AI for insights.
+                        </p>
+                        <div class="tech-stack">
+                            <span>Flutter</span>
+                            <span>Gemini AI</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <div class="placeholder-image">
+                            <p>Diagram: BoB App Flow</p>
+                            <p class="diagram-desc">User → Flutter UI → Gemini AI → Goal Insights</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-links">
-                <a href="mailto:your.email@example.com" class="contact-link">Email</a>
-                <a href="https://www.linkedin.com/in/your-profile" class="contact-link">LinkedIn</a>
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <ul class="skills-list">
+                    <li>Backend Development</li>
+                    <li>Node.js</li>
+                    <li>Python</li>
+                    <li>Django</li>
+                    <li>AWS (EC2, S3)</li>
+                    <li>Docker</li>
+                    <li>Digital Ocean</li>
+                    <li>MySQL</li>
+                    <li>PostgreSQL</li>
+                    <li>MongoDB</li>
+                    <li>REST API</li>
+                    <li>IBM Watson AI</li>
+                    <li>Gemini AI</li>
+                    <li>Flutter</li>
+                    <li>NLP</li>
+                    <li>Jest</li>
+                    <li>JWT</li>
+                    <li>Jenkins</li>
+                    <li>UX Research</li>
+                    <li>Database Migrations</li>
+                    <li>Software Refactoring</li>
+                    <li>Scalability</li>
+                    <li>Technical Leadership</li>
+                    <li>Entrepreneurship</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <p class="contact-info">
+                    Email: <a href="mailto:trulyhawona@gmail.com">trulyhawona@gmail.com</a> | 
+                    LinkedIn: <a href="https://www.linkedin.com/in/rodgers-wisdom" target="_blank">Rodgers Wisdom</a> | 
+                    Open to backend and AI roles—let's connect!
+                </p>
             </div>
         </section>
     </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rodgers (Hawona) Wisdom. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

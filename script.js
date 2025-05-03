@@ -1,41 +1,48 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Get all navigation links
-    const navLinks = document.querySelectorAll('nav a');
+// Portfolio Site JavaScript
+// Minimal scripting for navigation and section highlighting
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
     
-    // Smooth scroll to section when clicking nav links
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('show');
+        });
+    }
+    
+    // Close mobile menu when link is clicked
+    const navItems = document.querySelectorAll('.nav-links a');
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            if (navLinks.classList.contains('show')) {
+                navLinks.classList.remove('show');
+            }
         });
     });
-
-    // Set up Intersection Observer for section detection
-    const sectionObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-                    // Remove active class from all links
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    
-                    // Add active class to corresponding nav link
-                    const activeLink = document.querySelector(`nav a[href="#${entry.target.id}"]`);
-                    if (activeLink) {
-                        activeLink.classList.add('active');
-                    }
-                }
-            });
-        },
-        {
-            threshold: 0.5,
-            rootMargin: '-60px 0px 0px 0px' // Adjust for fixed header height
-        }
-    );
-
-    // Observe all sections
-    document.querySelectorAll('section').forEach(section => {
-        sectionObserver.observe(section);
+    
+    // Active section highlighting
+    const sections = document.querySelectorAll('.section');
+    const navItems2 = document.querySelectorAll('.nav-links a');
+    
+    window.addEventListener('scroll', function() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navItems2.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href').includes(current)) {
+                item.classList.add('active');
+            }
+        });
     });
 });
