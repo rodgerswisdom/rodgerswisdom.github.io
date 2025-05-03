@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study on improving vendor verification at MAJIAPP, reducing onboarding time by 30%">
+    <meta name="keywords" content="backend engineering, database optimization, SQL triggers, Docker, legacy systems">
+    <title>MAJIAPP Case Study | Hawona</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="./pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="container">
+                <div class="name-mobile">Rodgers (Hawona) Wisdom</div>
+                <ul class="nav-links">
+                    <li><a href="../index.html" class="active">Home</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#skills">Skills</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="back-link">
+                <a href="index.html#projects">&larr; Back to Projects</a>
+            </div>
+
+            <section class="project-header">
+                <h1>Streamlining Vendor Verification: How I Reduced Onboarding Time by 30% at MAJIAPP</h1>
+                <p class="project-tagline">Modernizing legacy water access infrastructure in Kenya through efficient database solutions</p>
+                
+                <div class="project-meta">
+                    <div class="project-duration">
+                        <strong>Duration:</strong> March 2023 - August 2023
+                    </div>
+                    <div class="tech-stack-full">
+                        <span>PHP (CI3)</span>
+                        <span>MySQL</span>
+                        <span>Docker</span>
+                        <span>Digital Ocean</span>
+                        <span>SQL Triggers</span>
+                        <span>Database Migrations</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project-content">
+                <div class="project-section">
+                    <h2>Project Overview</h2>
+                    <div class="section-content">
+                        <p>
+                            MAJIAPP is a critical platform that connects thousands of Kenyans with clean water 
+                            services through a network of verified vendors. The platform serves over 50,000 users 
+                            across multiple counties, making clean water accessible in underserved regions.
+                        </p>
+                        <p>
+                            As the backend engineer responsible for the vendor management system, my primary 
+                            challenge was to address the slow and manual vendor verification process in this 
+                            legacy CodeIgniter 3 application. Vendor onboarding was taking an average of 7 days, 
+                            delaying critical water services to communities in need.
+                        </p>
+                        <p>
+                            By implementing SQL triggers and streamlining the database infrastructure, I was able to 
+                            reduce the verification time by 30%, bringing the average onboarding time down to less than 5 days 
+                            while improving data integrity and system reliability.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2>Problem Statement</h2>
+                    <div class="section-content">
+                        <div class="problem-list">
+                            <div class="problem-item">
+                                <h3>Slow Vendor Verification</h3>
+                                <p>
+                                    The existing verification process required multiple manual database queries and 
+                                    human checks, creating a bottleneck for new vendors trying to join the platform.
+                                </p>
+                            </div>
+                            <div class="problem-item">
+                                <h3>Legacy Codebase Constraints</h3>
+                                <p>
+                                    MAJIAPP was built on CodeIgniter 3, an older PHP framework with 
+                                    limited ORM capabilities, making database interactions verbose and error-prone.
+                                </p>
+                            </div>
+                            <div class="problem-item">
+                                <h3>Inconsistent Deployment Process</h3>
+                                <p>
+                                    The manual deployment process led to inconsistencies between development 
+                                    and production environments, causing unexpected behaviors after updates.
+                                </p>
+                            </div>
+                            <div class="problem-item">
+                                <h3>Business Impact</h3>
+                                <p>
+                                    The slow verification process was directly impacting water service availability, 
+                                    with an estimated 500+ households experiencing delays in accessing clean water 
+                                    each month due to vendor onboarding bottlenecks.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2>Approach & Solution</h2>
+                    <div class="section-content">
+                        <p>
+                            After thoroughly analyzing the existing process and identifying the main bottlenecks, 
+                            I developed a three-pronged solution focused on automation, standardization, and reliability:
+                        </p>
+                        
+                        <div class="solution-steps">
+                            <div class="solution-step">
+                                <h3>1. SQL Trigger Implementation</h3>
+                                <p>
+                                    I designed and implemented SQL triggers that would automatically validate vendor 
+                                    information against predefined rules whenever new vendor data was inserted or updated 
+                                    in the database. This moved validation logic from the application layer to the database layer, 
+                                    ensuring consistency and reducing manual checks.
+                                </p>
+                            </div>
+
+                            <div class="solution-step">
+                                <h3>2. Structured Database Migrations</h3>
+                                <p>
+                                    I created a structured migration system for safely updating the database schema 
+                                    without risking data integrity. This included version control for database changes 
+                                    and rollback mechanisms for error recovery.
+                                </p>
+                            </div>
+
+                            <div class="solution-step">
+                                <h3>3. Docker Containerization</h3>
+                                <p>
+                                    I containerized the application using Docker to ensure consistent development, testing, 
+                                    and production environments. This eliminated deployment inconsistencies and simplified 
+                                    the scaling of the application on Digital Ocean.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2>Technical Deep Dive: SQL Triggers Implementation</h2>
+                    <div class="section-content">
+                        <p>
+                            The core of the solution was implementing SQL triggers to automate the vendor verification process. 
+                            These triggers executed automatically whenever vendor information was inserted or updated in the database.
+                        </p>
+
+                        <div class="code-explanation">
+                            <h3>Trigger Design:</h3>
+                            <div class="code-block">
+                                <pre><code>CREATE TRIGGER verify_vendor_after_insert
+AFTER INSERT ON vendors
+FOR EACH ROW
+BEGIN
+    -- Initial verification status
+    DECLARE verification_status VARCHAR(20) DEFAULT 'pending';
+    
+    -- Auto-verification based on predefined rules
+    IF NEW.document_verified = 1 AND 
+       NEW.contact_verified = 1 AND 
+       NEW.location_coordinates IS NOT NULL THEN
+        SET verification_status = 'auto_verified';
+    END IF;
+    
+    -- Insert verification record
+    INSERT INTO vendor_verifications (
+        vendor_id, 
+        verification_status, 
+        verification_date, 
+        verification_method
+    ) VALUES (
+        NEW.id, 
+        verification_status, 
+        NOW(), 
+        'system_trigger'
+    );
+    
+    -- Update vendor status if auto-verified
+    IF verification_status = 'auto_verified' THEN
+        UPDATE vendors 
+        SET status = 'active', last_verification_date = NOW() 
+        WHERE id = NEW.id;
+    END IF;
+END;</code></pre>
+                            </div>
+
+                            <h3>Key Benefits:</h3>
+                            <ul>
+                                <li>Automatic validation at the database level, removing application-level complexity</li>
+                                <li>Consistent rule application regardless of how vendor data was inserted/updated</li>
+                                <li>Reduction in manual verification checks by ~60%</li>
+                                <li>Creation of an audit trail through the vendor_verifications table</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2>Technical Deep Dive: Database Migration Process</h2>
+                    <div class="section-content">
+                        <p>
+                            To ensure safe database updates and maintain data integrity during schema changes, 
+                            I implemented a structured migration system:
+                        </p>
+
+                        <div class="migration-approach">
+                            <h3>Migration File Structure:</h3>
+                            <div class="code-block">
+                                <pre><code>// migrations/20230415_add_vendor_verification_table.php
+
+class Migration_Add_vendor_verification_table extends CI_Migration {
+    public function up() {
+        $this->dbforge->add_field([
+            'id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => TRUE,
+                'auto_increment' => TRUE
+            ],
+            'vendor_id' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => TRUE
+            ],
+            'verification_status' => [
+                'type' => 'VARCHAR',
+                'constraint' => '20'
+            ],
+            'verification_date' => [
+                'type' => 'DATETIME'
+            ],
+            'verification_method' => [
+                'type' => 'VARCHAR',
+                'constraint' => '30'
+            ],
+            'verified_by' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => TRUE,
+                'null' => TRUE
+            ]
+        ]);
+        $this->dbforge->add_key('id', TRUE);
+        $this->dbforge->add_field('CONSTRAINT FOREIGN KEY (vendor_id) REFERENCES vendors(id)');
+        $this->dbforge->create_table('vendor_verifications');
+    }
+
+    public function down() {
+        $this->dbforge->drop_table('vendor_verifications');
+    }
+}</code></pre>
+                            </div>
+
+                            <h3>Migration Execution Strategy:</h3>
+                            <p>
+                                I implemented a CI/CD pipeline that would run migrations during off-peak hours, 
+                                with automatic rollback if any errors were detected. This ensured that database 
+                                changes were applied safely without interrupting the service.
+                            </p>
+
+                            <h3>Results:</h3>
+                            <ul>
+                                <li>Zero downtime during database updates</li>
+                                <li>Version-controlled database schema</li>
+                                <li>Ability to safely roll back changes if issues were detected</li>
+                                <li>Consistent database structure across environments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2>Dockerization Process</h2>
+                    <div class="section-content">
+                        <p>
+                            To address deployment inconsistencies, I containerized the application using Docker:
+                        </p>
+
+                        <div class="docker-implementation">
+                            <h3>Docker Configuration:</h3>
+                            <div class="code-block">
+                                <pre><code># Dockerfile for MAJIAPP
+
+FROM php:7.4-apache
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip \
+    git
+
+# Install PHP extensions
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+
+# Set working directory
+WORKDIR /var/www/html
+
+# Copy application files
+COPY . /var/www/html/
+
+# Configure Apache
+RUN a2enmod rewrite
+RUN chown -R www-data:www-data /var/www/html
+
+# Environment variables
+ENV CI_ENV production
+
+# Expose port
+EXPOSE 80
+
+CMD ["apache2-foreground"]</code></pre>
+                            </div>
+
+                            <h3>Docker Compose for Development:</h3>
+                            <div class="code-block">
+                                <pre><code>version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    environment:
+      - CI_ENV=development
+      
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: majiapp
+      MYSQL_USER: majiapp_user
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: root_secret
+    volumes:
+      - db_data:/var/lib/mysql
+      
+volumes:
+  db_data:</code></pre>
+                            </div>
+
+                            <h3>Benefits:</h3>
+                            <ul>
+                                <li>Consistent environments across development, testing, and production</li>
+                                <li>Simplified onboarding of new developers</li>
+                                <li>Easier deployment to Digital Ocean</li>
+                                <li>Improved application stability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2>Results & Impact</h2>
+                    <div class="section-content">
+                        <div class="results-metrics">
+                            <div class="metric">
+                                <div class="metric-value">30%</div>
+                                <div class="metric-label">Reduction in vendor onboarding time</div>
+                                <div class="metric-description">From 7 days to under 5 days on average</div>
+                            </div>
+                            
+                            <div class="metric">
+                                <div class="metric-value">60%</div>
+                                <div class="metric-label">Reduction in manual verification tasks</div>
+                                <div class="metric-description">Freeing staff to focus on complex cases</div>
+                            </div>
+                            
+                            <div class="metric">
+                                <div class="metric-value">99.8%</div>
+                                <div class="metric-label">System uptime</div>
+                                <div class="metric-description">Improved from 98.5% before containerization</div>
+                            </div>
+                            
+                            <div class="metric">
+                                <div class="metric-value">~500</div>
+                                <div class="metric-label">Additional households served monthly</div>
+                                <div class="metric-description">Due to faster vendor onboarding</div>
+                            </div>
+                        </div>
+
+                        <p class="impact-statement">
+                            The improvements to the vendor verification system had a direct positive impact on 
+                            MAJIAPP's ability to fulfill its mission of providing clean water access to Kenyan communities. 
+                            By reducing the vendor onboarding time, we were able to expand water service coverage faster 
+                            and more efficiently.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2>System Architecture</h2>
+                    <div class="section-content full-width">
+                        <div class="architecture-diagram">
+                            <div class="placeholder-image large">
+                                <p>Enhanced MAJIAPP Architecture Diagram</p>
+                                <p class="diagram-desc">User → SQL Trigger → DB → Digital Ocean (Expanded View)</p>
+                            </div>
+                        </div>
+                        <div class="architecture-explanation">
+                            <h3>Key Components:</h3>
+                            <ul>
+                                <li><strong>Frontend Layer:</strong> CodeIgniter 3 views and controllers handling user interactions</li>
+                                <li><strong>Application Layer:</strong> Business logic implemented in CodeIgniter models</li>
+                                <li><strong>Database Layer:</strong> MySQL database with SQL triggers for automated verification</li>
+                                <li><strong>Infrastructure:</strong> Docker containers hosted on Digital Ocean droplets</li>
+                                <li><strong>CI/CD Pipeline:</strong> Jenkins-based automated testing and deployment</li>
+                            </ul>
+
+                            <h3>Data Flow:</h3>
+                            <ol>
+                                <li>User submits vendor information through the web interface</li>
+                                <li>Application validates input and stores data in MySQL database</li>
+                                <li>SQL triggers automatically execute verification rules</li>
+                                <li>Verification status is updated, and notifications are sent</li>
+                                <li>If auto-verified, vendor is immediately activated</li>
+                                <li>If manual verification is needed, staff is notified via the admin panel</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2>Challenges & Solutions</h2>
+                    <div class="section-content">
+                        <div class="challenge-solution">
+                            <div class="challenge">
+                                <h3>Challenge: Legacy CodeIgniter Compatibility</h3>
+                                <p>
+                                    CodeIgniter 3's limited migration capabilities made implementing database 
+                                    changes risky and error-prone.
+                                </p>
+                            </div>
+                            <div class="solution">
+                                <h3>Solution:</h3>
+                                <p>
+                                    I extended CI's migration library with custom functionality to handle complex 
+                                    operations like trigger creation and foreign key constraints, with proper error 
+                                    handling and rollback capabilities.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="challenge-solution">
+                            <div class="challenge">
+                                <h3>Challenge: Maintaining Data Integrity</h3>
+                                <p>
+                                    Moving verification logic to the database layer risked inconsistencies with 
+                                    existing application logic.
+                                </p>
+                            </div>
+                            <div class="solution">
+                                <h3>Solution:</h3>
+                                <p>
+                                    I implemented a dual-validation approach during the transition, with both 
+                                    application and database-level checks, gradually shifting logic to triggers 
+                                    after thorough testing and validation.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="challenge-solution">
+                            <div class="challenge">
+                                <h3>Challenge: Docker Performance on Legacy Application</h3>
+                                <p>
+                                    Initial Docker implementation showed performance degradation compared to 
+                                    the direct server deployment.
+                                </p>
+                            </div>
+                            <div class="solution">
+                                <h3>Solution:</h3>
+                                <p>
+                                    I optimized the Docker configuration with PHP-FPM and Nginx instead of Apache, 
+                                    implemented opcode caching, and fine-tuned MySQL configuration within the container 
+                                    environment to match or exceed previous performance metrics.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2>Lessons Learned</h2>
+                    <div class="section-content">
+                        <div class="lessons">
+                            <div class="lesson">
+                                <h3>Working with Legacy Systems</h3>
+                                <p>
+                                    I learned to balance modernization needs with system stability, implementing 
+                                    changes incrementally rather than attempting complete rewrites. Finding creative 
+                                    solutions within the constraints of older frameworks proved to be a valuable skill.
+                                </p>
+                            </div>
+
+                            <div class="lesson">
+                                <h3>Database-Level Business Logic</h3>
+                                <p>
+                                    Moving certain validation rules to the database layer via triggers not only 
+                                    improved performance but also ensured consistency regardless of how data was 
+                                    inserted or modified. This approach works particularly well for validation rules 
+                                    that rarely change.
+                                </p>
+                            </div>
+
+                            <div class="lesson">
+                                <h3>Containerization Benefits for Legacy Applications</h3>
+                                <p>
+                                    While containerizing older applications requires additional consideration for 
+                                    performance optimization, the benefits in deployment consistency and environment 
+                                    parity far outweigh the initial setup complexity.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h2>Future Recommendations</h2>
+                    <div class="section-content">
+                        <div class="recommendations">
+                            <div class="recommendation">
+                                <h3>GraphQL API Implementation</h3>
+                                <p>
+                                    I recommended implementing a GraphQL API layer in front of the existing 
+                                    application to provide a more flexible interface for future mobile applications 
+                                    and integration partners.
+                                </p>
+                            </div>
+
+                            <div class="recommendation">
+                                <h3>Migration to Laravel</h3>
+                                <p>
+                                    For long-term maintainability, I proposed a gradual migration path from 
+                                    CodeIgniter 3 to Laravel, starting with new features as separate services 
+                                    before eventually replacing the core functionality.
+                                </p>
+                            </div>
+
+                            <div class="recommendation">
+                                <h3>Enhanced Vendor Analytics</h3>
+                                <p>
+                                    Building on the improved verification system, I suggested implementing 
+                                    vendor performance analytics to help identify the most reliable water 
+                                    providers and optimize service delivery.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="related-projects">
+                <h2>Related Projects</h2>
+                <div class="related-cards">
+                    <div class="related-card">
+                        <h3>MyInsight IQ: AI Tools Directory</h3>
+                        <p>
+                            Developed the backend for Africa's largest no-code AI repository using Python and Django.
+                        </p>
+                        <a href="myinsight-tools.html" class="button secondary">View Project</a>
+                    </div>
+                    <div class="related-card">
+                        <h3>AgroGhala: AI-Powered Farming Solutions</h3>
+                        <p>
+                            Co-founded and led development of an award-winning platform connecting Kenyan farmers to storage.
+                        </p>
+                        <a href="agroghala.html" class="button secondary">View Project</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

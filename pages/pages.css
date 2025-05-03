@@ -1,0 +1,323 @@
+/* 
+  Project Pages Specific CSS
+  Extends styles.css for detailed project case studies
+*/
+
+/* Base styles for project pages */
+.back-link {
+    margin: 2rem 0;
+}
+
+.back-link a {
+    display: inline-block;
+    padding: 0.5rem 0;
+    font-weight: 400;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+    color: var(--primary-color);
+}
+
+/* Add spacing below the navbar */
+body {
+    padding-top: 4rem; /* Adjust this value as needed */
+}
+
+/* Add spacing above the footer */
+footer {
+    margin-top: 4rem; /* Adjust this value as needed */
+}
+
+/* Ensure the main content doesn't overlap with the navbar or footer */
+main {
+    padding: 2rem 1rem; /* Add padding to the main content */
+}
+
+/* Project Header */
+.project-header {
+    margin-bottom: 3rem;
+}
+
+.project-header h1 {
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+.project-tagline {
+    font-size: 18px;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.project-duration {
+    margin-bottom: 1rem;
+}
+
+.tech-stack-full {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tech-stack-full span {
+    background-color: var(--light-color);
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+}
+
+/* Project Content */
+.project-content {
+    max-width: 100%;
+}
+
+.project-section {
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-section:last-child {
+    border-bottom: none;
+}
+
+.project-section h2 {
+    margin-bottom: 1.5rem;
+}
+
+.section-content {
+    line-height: 1.6;
+}
+
+.section-content p {
+    margin-bottom: 1.5rem;
+}
+
+.section-content ul, .section-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.section-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Problem List */
+.problem-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+}
+
+.problem-item {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+}
+
+.problem-item h3 {
+    margin-bottom: 0.75rem;
+}
+
+/* Solution Steps */
+.solution-steps {
+    margin-top: 1.5rem;
+}
+
+.solution-step {
+    margin-bottom: 1.5rem;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
+}
+
+/* Code Blocks */
+.code-block {
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.code-block pre {
+    padding: 1rem;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.code-block code {
+    color: #333;
+}
+
+/* Results Metrics */
+.results-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.metric {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.metric-value {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.metric-description {
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+.impact-statement {
+    font-size: 18px;
+    font-weight: 300;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Architecture Section */
+.architecture-diagram {
+    margin-bottom: 2rem;
+}
+
+.placeholder-image.large {
+    height: 400px;
+}
+
+.architecture-explanation {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+}
+
+/* Challenges & Solutions */
+.challenge-solution {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.challenge, .solution {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+}
+
+.challenge h3, .solution h3 {
+    margin-bottom: 0.75rem;
+}
+
+/* Lessons */
+.lessons {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1.5rem;
+}
+
+.lesson {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+}
+
+.lesson h3 {
+    margin-bottom: 0.75rem;
+}
+
+/* Recommendations */
+.recommendations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+}
+
+.recommendation {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+}
+
+.recommendation h3 {
+    margin-bottom: 0.75rem;
+}
+
+/* Related Projects */
+.related-projects {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.related-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+}
+
+.related-card {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+}
+
+.related-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.related-card p {
+    margin-bottom: 1rem;
+}
+
+.button.secondary {
+    background-color: var(--secondary-color);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #home {
+        padding-top: 6rem;
+    }
+    
+    .project-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .problem-list {
+        grid-template-columns: 1fr; /* Adjust grid for smaller screens */
+    }
+
+    .results-metrics {
+        grid-template-columns: repeat(2, 1fr); /* Reduce columns for smaller screens */
+    }
+
+    .recommendations {
+        grid-template-columns: 1fr; /* Stack recommendations vertically */
+    }
+
+    .related-cards {
+        grid-template-columns: 1fr; /* Stack related projects vertically */
+    }
+}
