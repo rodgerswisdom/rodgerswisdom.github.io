@@ -298,3 +298,113 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* Under Development Banner */
+.dev-banner {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: white;
+    text-align: center;
+    padding: 0.75rem 2rem 0.75rem 1.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    font-weight: 500;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dev-banner p {
+    margin: 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dev-banner .icon {
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.dev-banner .highlight {
+    font-weight: 700;
+    color: #f8fafc;
+    margin: 0 0.25rem;
+}
+
+/* Close button styling */
+.dev-banner .close-banner {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dev-banner .close-banner:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.dev-banner .close-banner:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Adjust header positioning when banner is present */
+body.has-banner header {
+    top: 50px; /* Height of the banner */
+}
+
+body.has-banner #home {
+    padding-top: calc(7rem + 50px); /* Standard padding + banner height */
+}
+
+/* Hide banner when closed */
+.dev-banner.hidden {
+    display: none;
+}
+
+/* Animation for banner appearance */
+@keyframes slideBannerDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.dev-banner {
+    animation: slideBannerDown 0.5s ease-out forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .dev-banner p {
+        font-size: 0.85rem;
+    }
+    
+    .dev-banner .icon {
+        font-size: 1rem;
+    }
+}

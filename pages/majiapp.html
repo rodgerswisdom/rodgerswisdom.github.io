@@ -32,8 +32,43 @@
 
     <main>
         <div class="container">
+              <!-- Under Development Banner -->
+<div class="dev-banner">
+    <p>
+        <span class="icon">🚧</span>
+        This website is <span class="highlight">under development</span>. Some features may not be fully functional.
+    </p>
+    <button class="close-banner" aria-label="Close banner">×</button>
+</div>
+
+<!-- JavaScript for banner functionality -->
+<script>
+    // Close button functionality
+    document.querySelector('.close-banner').addEventListener('click', function() {
+        document.querySelector('.dev-banner').classList.add('hidden');
+        document.body.classList.remove('has-banner');
+        
+        // Optional: Save to localStorage to keep banner closed on refresh
+        localStorage.setItem('devBannerClosed', 'true');
+    });
+    
+    // Check if banner was previously closed (uncomment to enable this feature)
+    /*
+    if (localStorage.getItem('devBannerClosed')) {
+        document.querySelector('.dev-banner').classList.add('hidden');
+        document.body.classList.remove('has-banner');
+    }
+    */
+</script>
+            
+            <script>
+            document.getElementById('close-banner').addEventListener('click', function() {
+                document.querySelector('.dev-banner').style.display = 'none';
+                document.body.classList.remove('has-banner');
+            });
+            </script>
             <div class="back-link">
-                <a href="index.html#projects">&larr; Back to Projects</a>
+                <a href="../index.html#projects">&larr; Back to Projects</a>
             </div>
 
             <section class="project-header">

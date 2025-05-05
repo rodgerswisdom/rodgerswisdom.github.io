@@ -30,8 +30,30 @@
     </header>
 
     <main>
+        
         <!-- Home Section -->
         <section id="home" class="section">
+            <!-- Under Development Banner -->
+<div class="dev-banner">
+    <p>
+        <span class="icon">🚧</span>
+        This website is <span class="highlight">under development</span>. Some features may not be fully functional.
+    </p>
+    <button class="close-banner" aria-label="Close banner">×</button>
+</div>
+
+<!-- JavaScript for banner functionality -->
+<script>
+    // Close button functionality
+    document.querySelector('.close-banner').addEventListener('click', function() {
+        document.querySelector('.dev-banner').classList.add('hidden');
+        document.body.classList.remove('has-banner');
+        
+        // Optional: Save to localStorage to keep banner closed on refresh
+        localStorage.setItem('devBannerClosed', 'true');
+    });
+    
+</script>
             <div class="container">
                 <h1>Hey, I'm Rodgers!</h1>
                 <h2><b>Mid-Level Backend & AI Engineer | 5+ Years Experience | Call for Code 2023 Winner($5000)</b></h2>
@@ -127,7 +149,7 @@
                             Won 1st Runner-Up in Call for Code 2023 ($5,000).
                         </p>
                         <div class="tech-stack">
-                            <span>Node.js</span>
+                            <span>Django</span>
                             <span>IBM Watson AI</span>
                             <span>AWS (EC2)</span>
                             <span>Docker</span>
@@ -178,8 +200,22 @@
                     <li>Digital Ocean</li>
                     <li>MySQL</li>
                     <li>PostgreSQL</li>
+                    <li>Redis</li>
+                    <li>Cassandra</li>
+                    <li>Jenkins</li>
+                    <li>Github Actions</li>
+                    <li>Kubernetes</li>
+                    <li>Terraform</li>
+                    <li>Ansible</li>
                     <li>MongoDB</li>
                     <li>REST API</li>
+                    <li>TCP/IP</li>
+                    <li>GraphQL</li>
+                    <li>AMQP</li>
+                    <li>gRPC</li>
+                    <li>Deep Learning</li>
+                    <li>Data Pipeline</li>
+                    <li>Machine Learning</li>
                     <li>IBM Watson AI</li>
                     <li>Gemini AI</li>
                     <li>Flutter</li>
